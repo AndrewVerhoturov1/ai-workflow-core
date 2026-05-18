@@ -1,4 +1,4 @@
-﻿# ai-workflow-core
+# ai-workflow-core
 
 Stable public `/v1` rules repo для workflow `Codex + Kilo Code`.
 
@@ -80,4 +80,3 @@ ai-workflow-core/
 2. `/v1` prompt всегда содержит две обязательные central ссылки: `external_chat_rules.md` и `repo_navigation.md`.
 3. Дополнительные project-specific links подставляются из consumer repo под конкретный вопрос.
 4. Выбор между `/v1` и `/r1` делает человек.
-
