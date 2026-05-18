@@ -23,6 +23,24 @@ Stable public `/v1` rules repo для workflow `Codex + Kilo Code`.
 
 ## Два маршрута: /v1 и /r1
 
+### Короткая памятка
+
+`/v1` = один prompt во внешний чат сейчас. Без package, без recorder, без published artifacts.
+
+`/r1` = полный внешний пакет. С published artifacts, task bundle, recorder package и последующей записью ответа.
+
+### Быстрое правило выбора
+
+| Если тебе нужен... | Выбирай |
+|---|---|
+| Один короткий или средний вопрос во внешний чат | `/v1` |
+| Полный внешний workflow с артефактами и записью ответа | `/r1` |
+| Много файлов, published bundle, strict artifact contract | `/r1` |
+| Просто second opinion, critique, draft, UX/formulation review | `/v1` |
+
+**Момент выбора:** человек выбирает маршрут **до** подготовки downstream artifact.
+Для `/v1` это готовый prompt. Для `/r1` это full external launch package.
+
 ### /v1 — prompt-only вопрос (лёгкий маршрут)
 
 **Без handoff, без external launch package, без published task bundle, без Recorder Payload.**
@@ -40,6 +58,7 @@ Stable public `/v1` rules repo для workflow `Codex + Kilo Code`.
 - `/r1` использует отдельный technical publish repo `external-agent-read-test`, а не этот central core.
 - `/r1` требует published-artifact contract, recorder package и `kilo-recorder`.
 - Выбор между `/v1` и `/r1` всегда делает человек.
+- Практическое правило: если без published links и recorder-flow задача теряет смысл, это уже `/r1`, а не `/v1`.
 
 ## Структура central core
 
