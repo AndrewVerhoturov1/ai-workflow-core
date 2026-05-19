@@ -119,7 +119,7 @@ Automation scripts для workflow.
 
 Эти категории не являются частью central core и **не индексируются** в этом справочнике:
 
-- **scripts (runtime .py files)** — project-specific runtime скрипты, не входящие в central canonical core
+- **consumer runtime/history artifacts** — handoffs, reports, reviews, requests/responses, recorder packages, notebook storage и другие временные артефакты consumer repo
 - **project-specific state** — `project_brief.md`, `project_state.md`, `architecture.md`, `decisions.md` (принадлежат consumer repo)
 - **handoffs** — временные файлы handoff
 - **reports** — временные отчёты

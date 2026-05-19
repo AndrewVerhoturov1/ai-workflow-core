@@ -301,7 +301,7 @@ Codex поддерживает четыре короткие repo-level entry-к
 
 #### `/v1` Runtime Binding
 
-При явном shortcut `/v1` Codex **обязан** использовать шаблон [`.ai/prompts/create_external_question_prompt.md`](</D:/Codex+Kilocode/ai-workflow-test/.ai/prompts/create_external_question_prompt.md>) для создания prompt. Prompt, написанный вручную без шаблона, не считается готовым `/v1` prompt-ом и не должен выдаваться пользователю.
+При явном shortcut `/v1` Codex **обязан** использовать шаблон `prompts/create_external_question_prompt.md` в central core или локальную копию `.ai/prompts/create_external_question_prompt.md` в consumer repo для создания prompt. Prompt, написанный вручную без шаблона, не считается готовым `/v1` prompt-ом и не должен выдаваться пользователю.
 
 #### `/v1` Preflight Checklist
 

@@ -13,30 +13,30 @@
 Скопируй этот prompt целиком в Kilo без добавлений от себя.
 
 Прочитай handoff:
-`D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0031_debug_context7_in_kilo.md`.
+`<consumer-repo>/.ai/handoffs/0031_debug_context7_in_kilo.md`.
 
 Работай как `Debugger Agent`.
 
 Перед работой прочитай:
-- `D:\Codex+Kilocode\ai-workflow-test\AGENTS.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\agent_protocol.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\project_state.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\model_roster.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\rules\kilo_debugger.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0029_enable_context7_global_kilo.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0029_enable_context7_global_kilo_report.md`, если существует
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0030_verify_context7_in_kilo.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0030_verify_context7_in_kilo_report.md`
-- `C:\Users\andre\AppData\Roaming\Code\User\globalStorage\kilocode.kilo-code\settings\mcp_settings.json`
-- `C:\Users\andre\AppData\Roaming\Kilo-Code\MCP\mcp_config.json`
+- `<consumer-repo>/AGENTS.md`
+- `<consumer-repo>/.ai/agent_protocol.md`
+- `<consumer-repo>/.ai/project_state.md`
+- `<consumer-repo>/.ai/model_roster.md`
+- `<consumer-repo>/.ai/rules/kilo_debugger.md`
+- `<consumer-repo>/.ai/handoffs/0029_enable_context7_global_kilo.md`
+- `<consumer-repo>/.ai/reports/0029_enable_context7_global_kilo_report.md`, если существует
+- `<consumer-repo>/.ai/handoffs/0030_verify_context7_in_kilo.md`
+- `<consumer-repo>/.ai/reports/0030_verify_context7_in_kilo_report.md`
+- `<vscode-global-mcp-settings>`
+- `<kilo-global-mcp-config>`
 
 Разрешённые изменения:
-- `C:\Users\andre\AppData\Roaming\Code\User\globalStorage\kilocode.kilo-code\settings\mcp_settings.json`
-- `C:\Users\andre\AppData\Roaming\Kilo-Code\MCP\mcp_config.json` только если именно этот файл нужен текущему runtime
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0031_debug_context7_in_kilo_report.md`
+- `<vscode-global-mcp-settings>`
+- `<kilo-global-mcp-config>` только если именно этот файл нужен текущему runtime
+- `<consumer-repo>/.ai/reports/0031_debug_context7_in_kilo_report.md`
 
 Запрещено менять:
-- `D:\Codex+Kilocode\ai-workflow-test\.kilocode\mcp.json`
+- `<consumer-repo>/.kilocode/mcp.json`
 - любые repo files, кроме разрешённого report
 - любые несвязанные MCP entries
 - секреты и raw API keys
@@ -47,7 +47,7 @@
 - сделать только минимальный fix, если он локален и касается строго Context7;
 - если нужен manual step человека, не симулировать его, а описать его точно;
 - создать report:
-  - `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0031_debug_context7_in_kilo_report.md`
+  - `<consumer-repo>/.ai/reports/0031_debug_context7_in_kilo_report.md`
 
 Подсказки по диагностике:
 - MCP globally disabled;

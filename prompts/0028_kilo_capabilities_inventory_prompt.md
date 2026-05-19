@@ -1,35 +1,35 @@
 ```md
 Прочитай handoff:
-`D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0028_kilo_capabilities_inventory.md`.
+`<consumer-repo>/.ai/handoffs/0028_kilo_capabilities_inventory.md`.
 
 Работай как `Docs Agent`.
 
 Перед работой прочитай:
-- `D:\Codex+Kilocode\ai-workflow-test\AGENTS.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0028_kilo_capabilities_inventory.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\agent_protocol.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\project_state.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\rules\kilo_docs.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\capability_registry.schema.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\codex_capabilities.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\kilo_capabilities.md`
+- `<consumer-repo>/AGENTS.md`
+- `<consumer-repo>/.ai/handoffs/0028_kilo_capabilities_inventory.md`
+- `<consumer-repo>/.ai/agent_protocol.md`
+- `<consumer-repo>/.ai/project_state.md`
+- `<consumer-repo>/.ai/rules/kilo_docs.md`
+- `<consumer-repo>/.ai/capabilities/capability_registry.schema.md`
+- `<consumer-repo>/.ai/capabilities/codex_capabilities.md`
+- `<consumer-repo>/.ai/capabilities/kilo_capabilities.md`
 
-Разрешенные файлы:
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\kilo_capabilities.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0028_kilo_capabilities_inventory_report.md`
+Разрешённые файлы:
+- `<consumer-repo>/.ai/capabilities/kilo_capabilities.md`
+- `<consumer-repo>/.ai/reports/0028_kilo_capabilities_inventory_report.md`
 
 Запрещено менять:
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\codex_capabilities.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\capability_registry.schema.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\agent_protocol.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\project_state.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\model_roster.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\decisions.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\architecture.md`
+- `<consumer-repo>/.ai/capabilities/codex_capabilities.md`
+- `<consumer-repo>/.ai/capabilities/capability_registry.schema.md`
+- `<consumer-repo>/.ai/agent_protocol.md`
+- `<consumer-repo>/.ai/project_state.md`
+- `<consumer-repo>/.ai/model_roster.md`
+- `<consumer-repo>/.ai/decisions.md`
+- `<consumer-repo>/.ai/architecture.md`
 - любые другие файлы репозитория
 
 Задача:
-- заполнить `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\kilo_capabilities.md` по schema фактическими наблюдениями о Kilo runtime;
+- заполнить `<consumer-repo>/.ai/capabilities/kilo_capabilities.md` по schema фактическими наблюдениями о Kilo runtime;
 - описать, какие MCP, skills, helpers, plugins, CLI и tool-возможности реально видны в текущем запуске;
 - для каждой capability указать evidence;
 - явно отделить:
@@ -40,7 +40,7 @@
 - не ставить ни одной capability статус `human-approved`;
 - для всех capability без ручной проверки человека ставить `Human approval status: pending`;
 - создать report:
-  - `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0028_kilo_capabilities_inventory_report.md`
+  - `<consumer-repo>/.ai/reports/0028_kilo_capabilities_inventory_report.md`
 
 Обязательные capability-блоки:
 - file read/write возможности Kilo
@@ -55,9 +55,9 @@
 - если actual model не видна, пиши `недоступно`;
 - не объявляй capability окончательно рабочей для workflow;
 - не делай product work, это diagnostic/docs задача;
-- не меняй файлы вне разрешенного списка;
+- не меняй файлы вне разрешённого списка;
 - если capability только предполагается, так и напиши;
-- если не можешь надежно определить capability или metadata, не угадывай и честно зафиксируй это в `kilo_capabilities.md` и report.
+- если не можешь надёжно определить capability или metadata, не угадывай и честно зафиксируй это в `kilo_capabilities.md` и report.
 
 Stop conditions:
 - ты не понимаешь, какие capability реально видны твоему рантайму;
@@ -67,11 +67,11 @@ Stop conditions:
 
 В этих случаях не выдумывай. Честно зафиксируй ограничение в report и в `kilo_capabilities.md`.
 
-Человек после твоего отчета вручную проверит, что реально работает, а что отключено.
+Человек после твоего отчёта вручную проверит, что реально работает, а что отключено.
 Поэтому тебе нужен не optimistic summary, а удобный для ручной проверки inventory с evidence.
 
 Запиши report в:
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0028_kilo_capabilities_inventory_report.md`
+- `<consumer-repo>/.ai/reports/0028_kilo_capabilities_inventory_report.md`
 
 В report обязательно добавь раздел `## Runtime Metadata`.
 
@@ -87,12 +87,12 @@ Stop conditions:
 
 В report также укажи:
 - что сделано;
-- все измененные файлы;
+- все изменённые файлы;
 - какие проверки реально выполнены;
 - что удалось обнаружить;
 - что не удалось проверить;
 - что человек должен проверить вручную;
-- чеклист критериев приемки;
+- чеклист критериев приёмки;
 - риски и ограничения;
 - что не удалось сделать;
 - предлагаемый следующий шаг.

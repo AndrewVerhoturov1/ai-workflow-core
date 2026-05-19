@@ -13,27 +13,27 @@
 Скопируй этот prompt целиком в Kilo без добавлений от себя.
 
 Прочитай handoff:
-`D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0030_verify_context7_in_kilo.md`.
+`<consumer-repo>/.ai/handoffs/0030_verify_context7_in_kilo.md`.
 
 Работай как `Test Agent`.
 
 Перед работой прочитай:
-- `D:\Codex+Kilocode\ai-workflow-test\AGENTS.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\agent_protocol.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\project_state.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\model_roster.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\rules\kilo_tester.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0029_enable_context7_global_kilo.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0029_enable_context7_global_kilo_report.md`, если существует
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\handoffs\0030_verify_context7_in_kilo.md`
+- `<consumer-repo>/AGENTS.md`
+- `<consumer-repo>/.ai/agent_protocol.md`
+- `<consumer-repo>/.ai/project_state.md`
+- `<consumer-repo>/.ai/model_roster.md`
+- `<consumer-repo>/.ai/rules/kilo_tester.md`
+- `<consumer-repo>/.ai/handoffs/0029_enable_context7_global_kilo.md`
+- `<consumer-repo>/.ai/reports/0029_enable_context7_global_kilo_report.md`, если существует
+- `<consumer-repo>/.ai/handoffs/0030_verify_context7_in_kilo.md`
 
 Разрешённые изменения:
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0030_verify_context7_in_kilo_report.md`
+- `<consumer-repo>/.ai/reports/0030_verify_context7_in_kilo_report.md`
 
 Запрещено менять:
 - любые config files
-- `D:\Codex+Kilocode\ai-workflow-test\.ai\capabilities\kilo_capabilities.md`
-- `D:\Codex+Kilocode\ai-workflow-test\.kilocode\mcp.json`
+- `<consumer-repo>/.ai/capabilities/kilo_capabilities.md`
+- `<consumer-repo>/.kilocode/mcp.json`
 - любые исходники, тесты, docs и workflow-файлы
 
 Тестовое задание:
@@ -51,7 +51,7 @@
 - не подменяй evidence пересказом из памяти;
 - если Context7 tools не видны, ничего не чини, только зафиксируй blocker;
 - создай report:
-  - `D:\Codex+Kilocode\ai-workflow-test\.ai\reports\0030_verify_context7_in_kilo_report.md`
+  - `<consumer-repo>/.ai/reports/0030_verify_context7_in_kilo_report.md`
 
 В report обязательно добавь:
 - точные названия видимых Context7 tools или честное отсутствие tools;
