@@ -1,6 +1,6 @@
 # Правила для внешнего чата в маршруте /v1
 
-Этот файл — короткий public-facing contract для внешнего чата при работе по маршруту `/v1` (prompt-only вопрос во внешний чат). Это central core документ: он применяется вместе с project-specific context, который consumer repo передаёт отдельно под конкретный вопрос.
+Этот файл — короткий public-facing contract для внешнего чата при работе по маршруту `/v1` (prompt-only вопрос во внешний чат). Это central core документ из `ai-workflow-core` (central workflow core repo для системы Codex + Kilo Code): он применяется вместе с project-specific context, который consumer repo передаёт отдельно под конкретный вопрос.
 
 Маршрут `/v1` — это prompt-only route. Codex готовит только текст вопроса, без handoff, без external launch package, без published task bundle и без Recorder Payload. Выбор между `/v1` и `/r1` делает человек.
 

@@ -1,0 +1,31 @@
+# AGENTS.md
+
+Этот репозиторий использует workflow `Codex + Kilo Code`.
+
+## Portable Bootstrap Source
+
+Базовая схема переноса workflow описана в `.ai/bootstrap/portable/README.md`.
+
+## Project Identity
+
+- Название проекта: `{{PROJECT_NAME}}`
+- Тип проекта: `{{PROJECT_TYPE}}`
+- Основной язык коммуникации: `{{PRIMARY_LANGUAGE}}`
+
+## Core Workflow
+
+- Codex — оркестратор: изучает контекст, планирует, готовит handoff, проверяет report и diff, предлагает решение.
+- Kilo Code — исполнитель маленьких и изолированных задач, а не владелец широких проектных изменений.
+- Человек вручную переносит handoff и report между Codex, Kilo Code и редактором, а также принимает финальное решение.
+
+## Project-Specific Rules
+
+- Команды проверки: `{{TEST_COMMANDS}}`
+- Команды сборки: `{{BUILD_COMMANDS}}`
+- Запрещенные зоны: `{{HIGH_RISK_AREAS}}`
+- Дополнительные repo-правила: `{{PROJECT_RULES}}`
+
+## Portable Bootstrap Reminder
+
+- Не переносить в новый проект старые handoffs, reports, reviews и session history как активную память.
+- Project-specific state должен создаваться заново.

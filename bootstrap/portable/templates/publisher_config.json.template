@@ -1,0 +1,26 @@
+{
+  "repo": "{{GITHUB_REPO}}",
+  "branch": "{{GITHUB_BRANCH}}",
+  "static_manual_path": "external_agent_static_manual.md",
+  "temp_root": "external-agent-tmp/",
+  "local_static_source": ".ai/external_chats/external_agent_static_manual.md",
+  "static_manual_version": "{{STATIC_MANUAL_VERSION}}",
+  "raw_url_template": "https://raw.githubusercontent.com/{repo}/{branch}/{path}",
+  "blob_url_template": "https://github.com/{repo}/blob/{branch}/{path}",
+  "required_static_anchors": [
+    "EA-READ-FIRST",
+    "EA-REQUIRED-READING-ORDER",
+    "EA-STATIC-READBACK",
+    "EA-SOURCE-OF-TRUTH",
+    "EA-CORE-BOUNDARY",
+    "EA-TRUTH-RULE",
+    "EA-TASK-BUNDLE",
+    "EA-OUTPUT-DISCIPLINE",
+    "EA-GITHUB-LINKS",
+    "EA-STATIC-ANCHORS",
+    "EA-REVISION-CONTRACT",
+    "EA-SAFETY",
+    "EA-FAILURE-MODES",
+    "EA-FINAL-RULE"
+  ]
+}
