@@ -243,6 +243,12 @@ Codex поддерживает четыре короткие repo-level entry-к
 - `/r1` и `/р1` включаются только по явному shortcut-вызову пользователя.
 - Это explicit preparation mode перед созданием full external launch package.
 - `/r1` — полный published-artifact маршрут: external launch package, published task bundle, recorder package.
+- `/r1` не является default-маршрутом для внешних вопросов. Это редкий advanced/manual-only path.
+- `/r1` уместен только если нужен хотя бы один из порогов:
+  - published task bundle;
+  - strict traceability published-artifact route;
+  - recorder-ready capture через `kilo-recorder`;
+  - review самого external-package / published-artifact workflow.
 - При неясной цели external route сначала обязательное clarification:
   - простым языком предлагаются 2-4 уместных варианта того, что именно спросить у внешнего чата;
   - варианты должны различаться по `task profile`, глубине, expected output и границам scope, а не по названию модели;
@@ -265,10 +271,10 @@ Codex поддерживает четыре короткие repo-level entry-к
   - новым execution tool;
   - сокращённой формой `/r1`, которую Codex выбирает за человека.
 - Выбор `/v1` или `/r1` делает человек, а не Codex. Codex не переопределяет этот выбор.
-- `/v1` — prompt-only route. Для full external launch package используется `/r1`.
+- `/v1` — default external route и prompt-only route. Для full external launch package используется `/r1`.
 - Практическое правило выбора:
-  - если достаточно одного prompt и ответ не нужно публиковать, записывать через recorder или связывать с task bundle, это `/v1`;
-  - если вопрос теряет смысл без published links, task bundle, static manual или recorder-flow, это `/r1`.
+  - если достаточно одного prompt и не нужен ни один `/r1` threshold, это `/v1`;
+  - если нужен published task bundle, strict traceability, recorder-ready capture или review published-artifact workflow, это `/r1`.
 - При неясном вопросе Codex задаёт уточняющие вопросы до подготовки prompt.
 - Уточняющие вопросы и approval происходят до отправки prompt во внешний чат.
 
@@ -309,6 +315,7 @@ Codex поддерживает четыре короткие repo-level entry-к
 - downstream artifact для `/r1` — `full external launch package`;
 - обязательные сущности маршрута `/r1`: `published artifacts`, `task bundle`, `recorder package`;
 - practical completion path: `prepare -> publish -> external response -> record`.
+- `/r1` показывается как rare advanced/manual-only route, а не как everyday default.
 
 `/r1` не обязан быть выведен целиком в каждом кратком объяснении, но эти три пункта не должны теряться при user-facing описании маршрута.
 

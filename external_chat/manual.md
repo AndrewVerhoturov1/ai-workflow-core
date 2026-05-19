@@ -2,7 +2,7 @@
 
 Этот manual — компактная локальная reference для Codex и человека. Он не заменяет canonical static manual для published-artifact route.
 
-Этот manual описывает `/r1` published-artifact и recorder-flow. `/v1` staged local save через `kilo-notebook` сюда не входит и документируется отдельно в notebook docs.
+Этот manual описывает `/r1` published-artifact и recorder-flow. `/r1` — редкий advanced/manual-only route, а не default external path. `/v1` staged local save через `kilo-notebook` сюда не входит и документируется отдельно в notebook docs.
 
 ## Published-artifact route (CHUNK-008)
 
@@ -36,8 +36,10 @@ Production-like external route требует published-artifact contract:
 
 ### Граница с `/v1`
 
+- `/v1` — default external route, если достаточно одного prompt.
 - `/r1` raw response capture идёт через `kilo-recorder`.
 - `/v1` staged local persistence идёт через `kilo-notebook`.
+- `/r1` уместен только если нужен published task bundle, strict traceability, recorder-ready capture или review published-artifact workflow.
 - Этот manual не описывает notebook package. Notebook flow документирован отдельно в consumer repo (`.ai/external_chats/notebook/README.md`).
 
 ### Правильный flow

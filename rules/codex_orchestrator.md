@@ -231,8 +231,8 @@ Production-like external route требует:
 - `kilo-recorder` остаётся только для `/r1` response capture.
 - `kilo-notebook` работает только в local staged scope: notebook entry + `V1_navigation.md`.
 - User-facing вход для `kilo-notebook` — сырой ответ внешнего чата.
-- Штатный runtime path: `raw external response -> source artifact (.ai/external_chats/notebook_sources/) -> python scripts/stage_v1_notebook.py --input <source-file> -> internal notebook package -> notebook entry + V1_navigation.md`.
-- Source artifact создаётся как штатный internal transport artifact через file-edit path, а не shell text-dump.
+- Штатный runtime path: `raw external response -> source artifact (.ai/external_chats/notebook_sources/) -> python scripts/stage_v1_notebook.py --input <source-file> -> internal notebook package -> notebook entry + V1_navigation.md -> cleanup support artifacts`.
+- Source artifact создаётся как штатный internal transport artifact через file-edit path, а не shell text-dump; после успешного staging он удаляется автоматически вместе с internal notebook package.
 - Shell text-dump (`echo`, heredoc, длинный CLI literal) запрещён как стандартный transport.
 - `write_v1_notebook.py` — внутренний writer-step, не первым шагом для человека/Kilo Notebook.
 - `kilo-notebook` не обновляет `repo_navigation.md`.
@@ -273,6 +273,12 @@ Codex поддерживает четыре короткие repo-level entry-к
 - `/r1` и `/р1` включаются только по явному shortcut-вызову пользователя.
 - Это explicit preparation mode перед созданием full external launch package.
 - `/r1` — полный published-artifact маршрут: external launch package, published task bundle, recorder package.
+- `/r1` не является default-маршрутом для внешних вопросов. Это редкий advanced/manual-only path.
+- `/r1` уместен только если нужен хотя бы один из порогов:
+  - published task bundle;
+  - strict traceability published-artifact route;
+  - recorder-ready capture через `kilo-recorder`;
+  - review самого external-package / published-artifact workflow.
 - При неясной цели external route сначала обязательное clarification:
   - простым языком предлагаются 2-4 уместных варианта того, что именно спросить у внешнего чата;
   - варианты различаются по `task profile`, глубине, expected output и границам scope, а не по названию модели;
@@ -295,7 +301,10 @@ Codex поддерживает четыре короткие repo-level entry-к
   - новым execution tool;
   - сокращённой формой `/r1`, которую Codex выбирает за человека.
 - Выбор `/v1` или `/r1` делает человек, а не Codex. Codex не переопределяет этот выбор.
-- `/v1` — prompt-only route. Для full external launch package используется `/r1`.
+- `/v1` — default external route и prompt-only route. Для full external launch package используется `/r1`.
+- Практическое правило выбора:
+  - если достаточно одного prompt и не нужен ни один `/r1` threshold, это `/v1`;
+  - если нужен published task bundle, strict traceability, recorder-ready capture или review published-artifact workflow, это `/r1`.
 - При неясном вопросе Codex задаёт уточняющие вопросы до подготовки prompt.
 - Уточняющие вопросы и approval происходят до отправки prompt во внешний чат.
 

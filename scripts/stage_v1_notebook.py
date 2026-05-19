@@ -11,7 +11,7 @@ import re
 import sys
 from pathlib import Path
 
-from write_v1_notebook import repo_root, write_outputs
+from write_v1_notebook import NAV_HEADER, NAV_PLACEHOLDER_PREFIX, NAV_SEPARATOR, repo_root, write_outputs
 
 
 SECTION_RE = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
@@ -264,10 +264,36 @@ def build_package_text(
     return "\n".join(package_lines), package_path, notebook_entry_path
 
 
+def build_navigation_seed_text() -> str:
+    return "\n".join(
+        [
+            "# V1 Navigation",
+            "",
+            "| External Question ID | Date | Status | Topic | Notebook Entry Path | Summary |",
+            "|---|---|---|---|---|---|",
+            "| — | — | `staged` | Entries will appear here | — | — |",
+            "",
+        ]
+    )
+
+
 def ensure_seed_files(root: Path) -> None:
     navigation_path = root / ".ai" / "external_chats" / "V1_navigation.md"
     if not navigation_path.exists():
-        raise FileNotFoundError(str(navigation_path))
+        navigation_path.parent.mkdir(parents=True, exist_ok=True)
+        navigation_path.write_text(build_navigation_seed_text(), encoding="utf-8")
+        return
+
+    text = navigation_path.read_text(encoding="utf-8")
+    if NAV_HEADER not in text or NAV_SEPARATOR not in text:
+        raise ValueError(
+            "Существующий `V1_navigation.md` не содержит ожидаемую таблицу. "
+            "Автосоздание seed выполняется только для отсутствующего файла."
+        )
+    if NAV_PLACEHOLDER_PREFIX not in text and "| V1-" not in text:
+        raise ValueError(
+            "Существующий `V1_navigation.md` не содержит ни placeholder, ни реальных V1 entries."
+        )
 
 
 def verify_outputs(
@@ -302,6 +328,25 @@ def verify_outputs(
 
     if navigation_row not in navigation_text:
         raise ValueError("V1_navigation.md не содержит ожидаемую строку navigation row.")
+
+
+def cleanup_support_artifacts(root: Path, package_path: Path, source_path: Path | None) -> list[str]:
+    deleted: list[str] = []
+
+    package_path.unlink()
+    deleted.append(str(package_path))
+
+    if source_path is not None:
+        notebook_sources_dir = (root / ".ai" / "external_chats" / "notebook_sources").resolve()
+        try:
+            source_path.relative_to(notebook_sources_dir)
+        except ValueError:
+            return deleted
+
+        source_path.unlink()
+        deleted.append(str(source_path))
+
+    return deleted
 
 
 def main() -> int:
@@ -351,6 +396,11 @@ def main() -> int:
             navigation_row=navigation_row,
             source_path=source_abs,
         )
+        deleted_paths = cleanup_support_artifacts(
+            root=root,
+            package_path=package_abs,
+            source_path=source_abs,
+        )
     except FileNotFoundError as exc:
         print(f"ERROR: file not found: {exc.filename}")
         return 1
@@ -359,12 +409,13 @@ def main() -> int:
         return 1
 
     print("OK: raw response staged for kilo-notebook.")
-    if source_abs is not None:
-        print(f"Source file: {source_abs}")
-    print(f"Package: {package_abs}")
     print(f"Notebook entry: {notebook_path}")
     print(f"V1 navigation: {navigation_path}")
     print(f"Navigation row: {navigation_row}")
+    if deleted_paths:
+        print("Cleanup:")
+        for item in deleted_paths:
+            print(f"  deleted: {item}")
     print("Verification: OK")
     return 0
 

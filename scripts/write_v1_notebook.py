@@ -217,7 +217,6 @@ def build_notebook_entry(
     context_links: list[str],
     candidate_navigation_entry: str,
     raw_response: str,
-    source_package_path: str | None,
 ) -> str:
     relative_path = notebook_path.relative_to(root).as_posix()
     raw_response = raw_response.rstrip()
@@ -227,8 +226,6 @@ def build_notebook_entry(
         f"- Provider/Model: `{provider_model}`",
         f"- Notebook entry path: `{relative_path}`",
     ]
-    if source_package_path:
-        metadata_lines.append(f"- Source package path: `{source_package_path}`")
     return (
         "# Notebook Entry\n\n"
         + "\n".join(metadata_lines)
@@ -299,7 +296,6 @@ def write_outputs(package_path: Path, root: Path) -> tuple[Path, Path, str]:
 
     provider_model = normalize_scalar(str(data.get("provider_model", "not available")))
     context_links = require_string_list(data, "context_links") if "context_links" in data else []
-    source_package_path = package_path.relative_to(root).as_posix()
 
     date_value = parse_question_date(question_id)
     topic, summary = parse_candidate_navigation_entry(candidate_navigation_entry)
@@ -315,7 +311,6 @@ def write_outputs(package_path: Path, root: Path) -> tuple[Path, Path, str]:
         context_links=context_links,
         candidate_navigation_entry=candidate_navigation_entry,
         raw_response=raw_response,
-        source_package_path=source_package_path,
     )
     notebook_path.write_text(notebook_text, encoding="utf-8")
 
