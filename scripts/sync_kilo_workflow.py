@@ -42,6 +42,8 @@ CANONICAL_FILE_MAP = {
     "AGENTS.md": "AGENTS.md",
     ".gitignore": ".gitignore",
     "ai_readme.md": ".ai/README.md",
+    "external_chat_rules.md": ".ai/external_chats/external_chat_rules.md",
+    "repo_navigation.md": ".ai/repo_navigation.md",
 
     # Rules
     "rules/agent_protocol.md": ".ai/agent_protocol.md",
@@ -106,6 +108,8 @@ CANONICAL_FILE_MAP = {
     "scripts/sync_kilo_workflow.py": "scripts/sync_kilo_workflow.py",
     "scripts/stage_v1_notebook.py": "scripts/stage_v1_notebook.py",
     "scripts/write_v1_notebook.py": "scripts/write_v1_notebook.py",
+    "scripts/bootstrap_workflow.py": "scripts/bootstrap_workflow.py",
+    "scripts/safe_sync_workflow.py": "scripts/safe_sync_workflow.py",
 
     # External Chat
     "external_chat/manual.md": ".ai/external_chats/manual.md",

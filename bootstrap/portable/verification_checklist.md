@@ -4,7 +4,7 @@
 
 - [ ] `git status --short` чистый после переноса базового набора.
 - [ ] В новом repo существуют `AGENTS.md`, `.ai/README.md`, `.ai/agent_protocol.md`, `.ai/model_roster.md`.
-- [ ] В новом repo существуют `scripts/validate_kilo_contract.py`, `scripts/validate_session_contract.py`, `scripts/validate_external_chat_package.py`, `scripts/external_chat_publish.py`.
+- [ ] В новом repo существуют `scripts/validate_kilo_contract.py`, `scripts/validate_session_contract.py`, `scripts/validate_external_chat_package.py`, `scripts/external_chat_publish.py`, `scripts/sync_kilo_workflow.py`, `scripts/stage_v1_notebook.py`, `scripts/write_v1_notebook.py`, `scripts/bootstrap_workflow.py`, `scripts/safe_sync_workflow.py`.
 - [ ] Существуют пустые runtime-директории для handoffs, reports, reviews и external chat artifacts.
 
 ## Project-Specific Initialization
@@ -15,7 +15,7 @@
 
 ## Kilo / Workflow Contract
 
-- [ ] Kilo UI показывает четыре режима: `Kilo Handoff Runner`, `Kilo Debugger`, `Kilo Verifier`, `Kilo Recorder`.
+- [ ] Kilo UI показывает пять режимов: `Kilo Handoff Runner`, `Kilo Debugger`, `Kilo Verifier`, `Kilo Recorder`, `Kilo Notebook`.
 - [ ] Внутренний contract различает `Kilo mode` и `Task role`.
 - [ ] Для нового проекта не перенесены старые session/master artifacts как активный state.
 

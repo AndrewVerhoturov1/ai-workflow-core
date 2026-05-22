@@ -116,14 +116,16 @@ ai-workflow-core/
     verification_checklist.md
     templates/                        — starter templates
 
-  scripts/                            — automation scripts
-    validate_kilo_contract.py
-    validate_session_contract.py
-    validate_external_chat_package.py
-    external_chat_publish.py
-    sync_kilo_workflow.py
-    stage_v1_notebook.py
-    write_v1_notebook.py
+   scripts/                            — automation scripts
+     validate_kilo_contract.py
+     validate_session_contract.py
+     validate_external_chat_package.py
+     external_chat_publish.py
+     sync_kilo_workflow.py
+     bootstrap_workflow.py
+     safe_sync_workflow.py
+     stage_v1_notebook.py
+     write_v1_notebook.py
 
   external_chat/                      — external chat workflow materials
     manual.md

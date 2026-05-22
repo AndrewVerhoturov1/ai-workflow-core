@@ -98,6 +98,8 @@ Automation scripts для workflow.
 - [`scripts/validate_external_chat_package.py`](scripts/validate_external_chat_package.py) — валидатор published external route.
 - [`scripts/external_chat_publish.py`](scripts/external_chat_publish.py) — публикация task bundle.
 - [`scripts/sync_kilo_workflow.py`](scripts/sync_kilo_workflow.py) — синхронизация core из central в consumer.
+- [`scripts/bootstrap_workflow.py`](scripts/bootstrap_workflow.py) — script-assisted portable bootstrap wrapper (P1). Материализует managed copies из core layout в consumer layout.
+- [`scripts/safe_sync_workflow.py`](scripts/safe_sync_workflow.py) — metadata-aware safe sync (P2-P3). Dry-run classifier, limited apply, adoption assessment, backfill, absent restore, local variant review/decision/resolution.
 - [`scripts/stage_v1_notebook.py`](scripts/stage_v1_notebook.py) — staging notebook entries.
 - [`scripts/write_v1_notebook.py`](scripts/write_v1_notebook.py) — запись notebook entries.
 

@@ -59,3 +59,17 @@ CHUNK-007 сознательно **не** добавляет:
 - Не оценивать качество diff.
 - Не решать, принимать ли human gate.
 - Не заставлять historical artifacts становиться repo-wide green любой ценой.
+
+## Bootstrap and Safe Sync Workflow Scripts
+
+В central core добавлены два ключевых lifecycle-скрипта:
+
+- [`scripts/bootstrap_workflow.py`](../scripts/bootstrap_workflow.py) — P1: Script-Assisted Bootstrap Wrapper. Материализует managed copies из core layout в consumer layout.
+- [`scripts/safe_sync_workflow.py`](../scripts/safe_sync_workflow.py) — P2-P3: Metadata-Aware Safe Sync. Dry-run classifier, limited apply, adoption assessment, backfill, absent restore, local variant review/decision/resolution.
+
+Базовые проверки:
+
+```shell
+python scripts/bootstrap_workflow.py --help
+python scripts/safe_sync_workflow.py --help
+```

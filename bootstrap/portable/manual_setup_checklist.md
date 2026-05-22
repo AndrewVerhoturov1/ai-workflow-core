@@ -36,8 +36,9 @@
 - `Kilo Debugger`
 - `Kilo Verifier`
 - `Kilo Recorder`
+- `Kilo Notebook`
 - Проверьте, что `Kilo mode` и `Task role` не смешиваются.
-- Проверьте, что `kilo-recorder` настроен как отдельный mode, а не как role.
+- Проверьте, что `kilo-recorder` и `kilo-notebook` настроены как отдельные mode, а не как role.
 
 ## 5. Настроить published external route
 

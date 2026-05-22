@@ -23,6 +23,11 @@
 - `scripts/validate_session_contract.py`
 - `scripts/validate_external_chat_package.py`
 - `scripts/external_chat_publish.py`
+- `scripts/sync_kilo_workflow.py`
+- `scripts/stage_v1_notebook.py`
+- `scripts/write_v1_notebook.py`
+- `scripts/bootstrap_workflow.py`
+- `scripts/safe_sync_workflow.py`
 
 ## Instantiate-From-Template
 

@@ -16,6 +16,11 @@
 | `scripts/validate_session_contract.py` | `scripts/validate_session_contract.py` | `copy-as-is core` | Validator session contract. |
 | `scripts/validate_external_chat_package.py` | `scripts/validate_external_chat_package.py` | `copy-as-is core` | Validator published external route. |
 | `scripts/external_chat_publish.py` | `scripts/external_chat_publish.py` | `copy-as-is core` | Publish/cleanup helper для external route. |
+| `scripts/sync_kilo_workflow.py` | `scripts/sync_kilo_workflow.py` | `copy-as-is core` | Синхронизация core из central в consumer. |
+| `scripts/stage_v1_notebook.py` | `scripts/stage_v1_notebook.py` | `copy-as-is core` | Staging notebook entries для `/v1`. |
+| `scripts/write_v1_notebook.py` | `scripts/write_v1_notebook.py` | `copy-as-is core` | Запись notebook entries для `/v1`. |
+| `scripts/bootstrap_workflow.py` | `scripts/bootstrap_workflow.py` | `copy-as-is core` | Script-assisted portable bootstrap (P1). Запускать из central core. |
+| `scripts/safe_sync_workflow.py` | `scripts/safe_sync_workflow.py` | `copy-as-is core` | Metadata-aware safe sync (P2-P3). Запускать из central core. |
 | `.ai/project_brief.md` | `.ai/project_brief.md` | `instantiate-from-template` | Новый проект, новая цель. |
 | `.ai/project_state.md` | `.ai/project_state.md` | `instantiate-from-template` | Не переносить чужой runtime state. |
 | `.ai/architecture.md` | `.ai/architecture.md` | `instantiate-from-template` | Новая архитектура нового проекта. |
